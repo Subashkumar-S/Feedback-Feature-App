@@ -4,6 +4,11 @@ import { closeDesktop, feedbackFeatureDesktop, reportDesktop, contactUsDesktop, 
 import Form from '../Form/Form'
 const Feature = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [open, setOpen] = useState(false);
+  const [activeButton, setActiveButton] = useState(false);
+  const [formType, setFormType] = useState("");
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -15,34 +20,38 @@ const Feature = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  const [open, setOpen] = useState(false);
-  const [activeButton, setActiveButton ] = useState(false);
-  const [formType, setFormType] = useState("");
+
   const handleBtnClick = (type) => {
     setFormType(type);
     setActiveButton(!activeButton);
   }
+
   const handleClick = () => {
     setOpen(!open);
   }
-  console.log("form type is")
+
+  const handleFormSubmit = () => {
+    setFormSubmitted(true);
+  };
+
   const buttons = [
     { id: "report", name: "Report an Issue", desktopSource: reportDesktop, mobileSource: reportMobile },
     { id: "feedback", name: "Share Feedback", desktopSource: feedbackDesktop, mobileSource: feedbackMobile },
     { id: "suggestion", name: "Give Suggestion", desktopSource: suggestionDesktop, mobileSource: suggestionMobile },
     { id: "contact", name: "Contact Us", desktopSource: contactUsDesktop, mobileSource: contactUSMobile },
   ]
+
   return (
     <div className={`feature-container ${activeButton ? 'active' : ''}`}>
       {
-      activeButton &&
-      <Form type={`${formType}`}/>
+        activeButton &&
+        <Form type={`${formType}`} onFormSubmit={handleFormSubmit} />
       }
       <div className={`buttons-container ${activeButton ? 'active-form' : ''}`}>
         <div className={`button-container ${activeButton ? 'active-button' : ''}`}>
-          {open && buttons.map((button, index) => (
+          {(open || formSubmitted) && buttons.map((button, index) => (
             <div key={index}>
-              { !activeButton && <p>{button.name}</p>}
+              {!activeButton && <p>{button.name}</p>}
               <button onClick={() => handleBtnClick(button.id)}>
                 <img src={windowWidth > 768 ? button.desktopSource : button.mobileSource} alt={button.name} />
               </button>

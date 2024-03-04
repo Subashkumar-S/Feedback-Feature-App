@@ -1,0 +1,57 @@
+.form-container{
+    max-width: 430px;
+    background-color: var(--color-white);
+    border-radius: 6px;
+}
+.form-container > h4{
+    font-family: var(--font-poppins);
+    font-weight: 500;
+    font-size: 18px;
+    margin: 24px 16px 0px 16px;
+    padding-bottom: 24px;
+    text-align: center;
+    border-bottom: 2px solid #CCCCCC;
+}
+form > div{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px 24px;
+    font: 18px var(--font-poppins);
+}
+form  > .text-container >  button {
+    margin-top: -40px ;
+    margin-left: 12px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.submitButton{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.submitButton > button{
+    background-color: var(--color-black);
+    color: var(--color-white);
+    outline: none;
+    width: 114px;
+    height: 40px;
+    border-radius: 6px;
+    font-family: var(--font-poppins);
+    font-weight: 600;
+    font-size: 20px;
+}
+.email-container{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+@media screen and (max-width: 864px) {
+    .form-container{
+        max-width: 100vw;
+        border-radius: 16px;
+    }
+}

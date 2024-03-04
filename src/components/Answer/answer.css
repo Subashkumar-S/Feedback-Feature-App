@@ -1,0 +1,142 @@
+.answer-container {
+  width: 832px;
+  /* min-height: 351px; */
+  background-color: var(--bg-color-blue);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 0 41px;
+}
+.answer-heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  margin-top: 16px;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-poppins);
+}
+.user-name {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.user-name > span {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.date {
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.edit {
+  display: flex;
+  gap: 17px;
+}
+
+.edit > p {
+  font-family: var(--font-poppins);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.answer {
+  font-family: var(--font-poppins);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.answer > p > span {
+  color: #0f0f0f99;
+}
+.answer > p > span > strong {
+  color: var(--color-black);
+}
+.answer-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 18px 42px 16px;
+  flex-wrap: wrap;
+}
+.like,
+.answer-input {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-poppins);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.answer-input {
+  gap: 8px;
+}
+.answer-input > input {
+  outline: none;
+  height: 34px;
+  min-width: 478px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 30px;
+  padding-left: 10px;
+  border-radius: 6px;
+}
+.answer-input > button {
+  height: 34px;
+  width: 76px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #00000080;
+}
+@media screen and (max-width: 864px) {
+  .answer-container {
+    width: 100%;
+    height: auto;
+  }
+  .answer-input > input {
+    min-width: auto;
+  }
+  .like,
+  .answer,
+  .edit > p,
+  .user-name,
+  .user-name > span,
+  .date,
+  .answer-input .answer-input > input,
+  .answer-input > button {
+    font-size: 16px;
+  }
+}
